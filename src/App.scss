@@ -1,0 +1,128 @@
+@import "~antd/dist/antd.css";
+
+$white-color: white;
+$dark-background-input: #0b2034;
+$issue-background: #09365a;
+$text-color: #c8c8c8;
+$light-blue: #0283c3;
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+.home-wrapper {
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    140deg,
+    rgba(8, 54, 89, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .search-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    .form {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      .ant-input {
+        background-color: $dark-background-input;
+        border: none;
+        width: 300px;
+        color: $text-color;
+        &:hover {
+          background-color: $dark-background-input;
+        }
+        &::placeholder {
+          opacity: 0.4;
+        }
+      }
+      label {
+        color: $text-color;
+      }
+    }
+    .btn {
+      &:hover {
+        background-color: $light-blue;
+        color: $white-color;
+        border: none;
+      }
+      &:focus {
+        border: none;
+      }
+    }
+  }
+  .error-message {
+    font-size: 20px;
+    color: $white-color;
+  }
+  .result-container {
+    width: 80%;
+  }
+  .pagination {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .ant-pagination-item-ellipsis {
+      color: $white-color;
+    }
+  }
+}
+
+.issue-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  background-color: $issue-background;
+  color: $text-color;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  .assignee {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    width: 100px;
+    flex: 0 0 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+    span {
+      max-width: 80px;
+      word-wrap: break-word;
+      text-align: center;
+    }
+  }
+  .issue {
+    flex: 1;
+    border: none;
+    background-color: $issue-background;
+    color: $text-color;
+    .ant-card-head-title {
+      color: $text-color;
+    }
+    &.has-comments {
+      span {
+        color: $white-color;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .form {
+    width: 100%;
+    flex-direction: column !important;
+    .btn {
+      width: 150px;
+    }
+  }
+}
